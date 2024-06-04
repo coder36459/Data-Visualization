@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<title>Data Visualization with D3</title>
+	</head>
+	<body>
+		<script>
+			const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+			d3
+			.select("body")
+			.selectAll("h2")
+			.data(dataset)
+			.enter()
+			.append("h2")
+			.text((d) => (d + " USD"))
+			.style("color", (d) => {
+				if(d < 20) {
+					return "red"
+				}
+				else {
+					return "green"
+				}
+			})
+		</script>
+		<noscript>Your browser does not support JavaScript!</noscript>
+	</body>
+</html>
