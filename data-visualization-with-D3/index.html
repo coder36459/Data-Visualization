@@ -5,16 +5,30 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://d3js.org/d3.v7.min.js"></script>
 		<title>Data Visualization with D3</title>
+		<style>
+			.bar {
+				width: 25px;
+				height: 100px;
+				margin: 2px;
+				display: inline-block;
+				background-color: blue;
+			}
+		</style>
 	</head>
 	<body>
 		<script>
 			const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
 			d3
 			.select("body")
-			.selectAll("h2")
+			.selectAll("div")
+			//.selectAll("h2")
 			.data(dataset)
 			.enter()
-			.append("h2")
+			.append("div")
+			//.append("h2")
+			.attr("class", "bar")
+			.style("height", (d) => ((d * 10) + "px"))
+			/*
 			.text((d) => (d + " USD"))
 			.style("color", (d) => {
 				if(d < 20) {
@@ -24,6 +38,7 @@
 					return "green"
 				}
 			})
+			*/
 		</script>
 		<noscript>Your browser does not support JavaScript!</noscript>
 	</body>
