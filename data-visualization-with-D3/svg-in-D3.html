@@ -9,7 +9,7 @@
 			.bar:hover {
 				fill: yellow;
 			}
-    </style>
+		</style>
 	</head>
 	<body>
 		<script>
@@ -17,7 +17,6 @@
 			const w = 500;
 			const h = 150;
 			const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
-			
 			svg.selectAll("rect")
 			.data(dataset)
 			.enter()
@@ -28,7 +27,8 @@
 			.attr("height", (d, i) => d * 3)
 			.attr("fill", "violet")
 			.attr("class", "bar")
-			
+			.append("title")
+			.text((d) => d)
 			svg.selectAll("text")
 			.data(dataset)
 			.enter()
