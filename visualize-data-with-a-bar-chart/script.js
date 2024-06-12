@@ -3,7 +3,16 @@ const source = "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceD
 
 function app(data) {
 	const dateValue = data;
-	console.log(dateValue);
+	const w = 800;
+	const h = 600;
+	const p = 50;
+	const xScale = d3.scaleLinear().domain([0, d3.max(dateValue, (d, i) => i)]).range([p, w - p]);
+	const yScale = d3.scaleLinear().domain([0, d3.max(dateValue, (d) => d[1])]).range([h - p, p]);
+	const xAxis = d3.axisBottom(xScale);
+	const yAxis = d3.axisLeft(yScale);
+	const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+	svg.append("g").attr("transform", "translate(0, " + (h - p) + ")").attr("id", "x-axis").call(xAxis);
+	svg.append("g").attr("transform", "translate(" + p + ",0)").attr("id", "y-axis").call(yAxis);
 }
 
 fetch(source).then(response => response.json()).then(data => {app(data.data)});
