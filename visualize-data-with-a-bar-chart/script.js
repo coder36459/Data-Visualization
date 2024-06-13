@@ -11,6 +11,8 @@ function app(data) {
 	const xAxis = d3.axisBottom(xScale);
 	const yAxis = d3.axisLeft(yScale);
 	const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+	svg.selectAll("rect").data(dateValue).enter().append("rect").attr("class", "bar").attr("data-date", (d) => d[0]).attr("data-gdp", (d) => d[1])
+	svg.append("text").attr("id", "title")
 	svg.append("g").attr("transform", "translate(0, " + (h - p) + ")").attr("id", "x-axis").call(xAxis);
 	svg.append("g").attr("transform", "translate(" + p + ",0)").attr("id", "y-axis").call(yAxis);
 }
