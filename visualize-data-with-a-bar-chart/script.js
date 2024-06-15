@@ -17,4 +17,4 @@ function app(data) {
 	svg.append("g").attr("transform", "translate(" + p + ",0)").attr("id", "y-axis").call(yAxis);
 }
 
-fetch(source).then(response => response.json()).then(data => {app(data.data)});
+fetch(source).then(response => response.json()).then(data => {d3.select("body").append("div").attr("id", "title").text(data.name.substring(0, 22)).append("div").attr("id", "duration").text("From " + data.from_date + " to " + data.to_date);app(data.data)});
