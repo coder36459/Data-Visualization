@@ -1,1 +1,22 @@
-body {background-color: #888}
+body {
+background-color: #888;
+margin-bottom: 3em;
+}
+div {
+font-family: Arial;
+margin-top: 0.6em;
+text-align: center;
+}
+svg {
+background-color: #bbb;
+margin: auto;
+margin-top: 1em;
+display: block;
+}
+#title {
+font-size: 2em;
+font-weight: bold;
+}
+#duration {
+font-size: 1em;
+}
