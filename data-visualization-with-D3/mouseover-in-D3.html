@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<title>Data Visualization with D3</title>
+		<style>
+			#tooltip {
+				position: absolute;
+				visibility: hidden;
+				height: 50px;
+				width: 30px;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+			const w = 500;
+			const h = 150;
+			const tip = d3.select("body").append("div").attr("id", "tooltip")
+			const svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+			svg.selectAll("rect").data(dataset).enter().append("rect").attr("x", (d, i) => i * 30).attr("y", (d, i) => h - 3 * d).attr("width", 25).attr("height", (d, i) => d * 3).attr("fill", "violet").attr("class", "bar")
+			.on("mouseover", (d, i) => {
+				tip.transition().style("visibility", "visible");
+				tip.text(i).style("left", (event.pageX + 16) + "px").style("top", (event.pageY + 7) + "px");
+				d.target.style.fill = "purple";
+			})
+			.on("mouseout", (d, i) => {
+				tip.transition().style("visibility", "hidden");
+				d.target.style.fill = "violet";
+			})
+		</script>
+	</body>
+</html>
