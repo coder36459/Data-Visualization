@@ -1,17 +1,17 @@
 body {
-background-color: #888;
+background-color: rgba(87, 21, 199, 0.5);
+font-family: Arial;
 margin-bottom: 3em;
 }
 div {
-font-family: Arial;
 margin-top: 0.6em;
 text-align: center;
 }
 svg {
-background-color: #bbb;
+background-color: rgb(249, 200, 231);
+display: block;
 margin: auto;
 margin-top: 1em;
-display: block;
 }
 #title {
 font-size: 2em;
@@ -19,4 +19,11 @@ font-weight: bold;
 }
 #duration {
 font-size: 1em;
+}
+#tooltip {
+background-color: pink;
+height: 50px;
+position: absolute;
+visibility: hidden;
+width: 150px;
 }
