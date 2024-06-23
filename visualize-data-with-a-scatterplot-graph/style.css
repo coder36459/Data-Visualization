@@ -1,15 +1,20 @@
 body {
-  background-color: magenta;
-  font-family: Arial;
-  margin-bottom: 3em;
-  text-align: center;
+background-color: magenta;
+font-family: Arial;
+margin-bottom: 3em;
+text-align: center;
 }
 svg {
-  display: block;
-  margin: 0 auto;
+display: block;
+margin: 0 auto;
 }
 #title {
-  color: white;
-  font-size: 2em;
-  padding: .5em;
+color: white;
+font-size: 2em;
+padding: .5em;
+}
+#tooltip {
+padding: 5px;
+position: absolute;
+visibility: hidden;
 }
