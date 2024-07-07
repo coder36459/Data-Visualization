@@ -1,0 +1,23 @@
+body {
+background-color: silver;
+font-family: Arial;
+margin-bottom: 3em;
+text-align: center;
+}
+svg {
+display: block;
+margin: 0 auto;
+}
+#title {
+font-size: 2em;
+padding: .5em;
+}
+#tooltip {
+padding: 5px;
+position: absolute;
+text-align: justify;
+visibility: hidden;
+}
+#description {
+margin: 20px 0;
+}
