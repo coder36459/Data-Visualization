@@ -1,0 +1,36 @@
+body {
+color: #111;
+font-family: Arial;
+margin-bottom: 3em;
+text-align: center;
+}
+span {
+color: #00f;
+cursor: pointer;
+font-weight: bold;
+text-decoration: underline;
+}
+span:hover {
+color: #f00;
+}
+svg {
+display: block;
+margin: 0 auto;
+font-size:.8em;
+}
+#description {
+margin: 20px 0;
+}
+#legend {
+margin-top: 20px;
+}
+#title {
+font-size: 2em;
+padding: .5em;
+}
+#tooltip {
+padding: 5px;
+position: absolute;
+text-align: justify;
+visibility: hidden;
+}
